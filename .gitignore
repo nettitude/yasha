@@ -1,0 +1,9 @@
+*.xml
+cache_report.htm
+csp_report.htm
+reporting.htm
+TODO.md
+yasha_log.*
+burp_history
+__pycache__*
+.vscode*
