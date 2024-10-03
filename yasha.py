@@ -130,7 +130,7 @@ def parse(f):
         url = item.find('url').text
         response = item.find('response').text
         method = item.find('method').text
-        if not response:
+        if not response or method == "OPTIONS":
             continue
         raw_req = b64.b64decode(response)
         req = (raw_req.decode(errors="ignore")).split('\r\n')
