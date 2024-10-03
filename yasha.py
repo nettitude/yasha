@@ -43,14 +43,9 @@ def xframeoptions_check(req: List[str]) -> List[str]:
     # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
     xfo_lines = head_filter(req, 'X-Frame-Options')
     if xfo_lines:
-        for line in xfo_lines:
-            values = list(map(lambda x: x.strip(), ((line.split(':')[1]).strip()).split(',')))
-            for value in values:
-                if value.upper() not in ['DENY', 'SAMEORIGIN']:
-                    return ['fail', f'X-Frame-Options value is {value}']
-        return ['pass']
+        return ['fail', 'Deprecated X-Frame-Options headers found']
     else:
-        return ['fail', 'No X-Frame-Options header found']
+        return ['pass', 'No X-Frame-Options header found; check CSP']
     
 def xcontenttypeoptions_check(req):
     xcto_lines = head_filter(req, 'X-Content-Type-Options')
