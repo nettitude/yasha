@@ -2,7 +2,8 @@
 
 **Note that this is still in development. Please use the logs option and compare output to ensure accuracy.**
 
-**Warning: don't use this with untrusted data. See https://docs.python.org/3/library/xml.html#xml-vulnerabilities.**
+> [!Warning]
+> Don't use this with untrusted data. See https://docs.python.org/3/library/xml.html#xml-vulnerabilities.
 
 # What file does YASHA take?
 Yasha uses Burp Suite history. Ideally, first narrow traffic to in-scope items.
